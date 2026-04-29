@@ -168,6 +168,11 @@ targets:
     skills:
       global: "~/.openclaw/skills"
       project: "skills"
+  - name: openclacky
+    skills:
+      global: "~/.clacky/skills"
+      project: ".clacky/skills"
+    aliases: [clacky]
   - name: opencode
     skills:
       global: "~/.config/opencode/skills"
