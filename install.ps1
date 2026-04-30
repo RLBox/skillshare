@@ -5,7 +5,7 @@
 .DESCRIPTION
     Downloads and installs the latest skillshare release from GitHub
 .EXAMPLE
-    irm https://raw.githubusercontent.com/runkids/skillshare/main/install.ps1 | iex
+    irm https://raw.githubusercontent.com/RLBox/skillshare/main/install.ps1 | iex
 #>
 
 $ErrorActionPreference = "Stop"
@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 # PowerShell 5.1 defaults to TLS 1.0/1.1; GitHub requires TLS 1.2+
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$Repo = "runkids/skillshare"
+$Repo = "RLBox/skillshare"
 $BinaryName = "skillshare"
 
 function Write-Info { param($Message) Write-Host $Message -ForegroundColor Green }
@@ -91,7 +91,7 @@ function Install-Skillshare {
     $versionNum = $version.TrimStart("v")
     $installDir = Get-InstallDir
 
-    $url = "https://github.com/$Repo/releases/download/$version/${BinaryName}_${versionNum}_windows_${arch}.zip"
+    $url = "https://github.com/$Repo/releases/download/$version/${BinaryName}_${version}_windows_${arch}.zip"
 
     Write-Info "Downloading skillshare $version for windows/$arch..."
 

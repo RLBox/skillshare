@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-REPO="runkids/skillshare"
+REPO="RLBox/skillshare"
 BINARY_NAME="skillshare"
 if [ -z "${INSTALL_DIR}" ]; then
 	INSTALL_DIR="/usr/local/bin"
@@ -32,7 +32,7 @@ detect_os() {
   case "$OS" in
     darwin) OS="darwin" ;;
     linux) OS="linux" ;;
-    mingw*|msys*|cygwin*) error "Use PowerShell: irm https://raw.githubusercontent.com/runkids/skillshare/main/install.ps1 | iex" ;;
+    mingw*|msys*|cygwin*) error "Use PowerShell: irm https://raw.githubusercontent.com/RLBox/skillshare/main/install.ps1 | iex" ;;
     *) error "Unsupported OS: $OS" ;;
   esac
 }
@@ -65,7 +65,7 @@ get_latest_version() {
 
 # Download and install
 install() {
-  URL="https://github.com/${REPO}/releases/download/${LATEST}/${BINARY_NAME}_${VERSION}_${OS}_${ARCH}.tar.gz"
+  URL="https://github.com/${REPO}/releases/download/${LATEST}/${BINARY_NAME}_${LATEST}_${OS}_${ARCH}.tar.gz"
 
   info "Downloading skillshare ${VERSION} for ${OS}/${ARCH}..."
 
