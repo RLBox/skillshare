@@ -242,7 +242,7 @@ func LogoAnimated(version string, animate bool) {
 		a.Warning + `     _    _ _ _     _` + a.Reset,
 		a.Warning + ` ___| | _(_) | |___| |__   __ _ _ __ ___` + a.Reset,
 		a.Warning + `/ __| |/ / | | / __| '_ \ / _` + "`" + ` | '__/ _ \` + a.Reset,
-		a.Warning + `\__ \   <| | | \__ \ | | | (_| | | |  __/` + a.Reset + `  ` + a.Dim + `https://github.com/runkids/skillshare` + a.Reset,
+		a.Warning + `\__ \   <| | | \__ \ | | | (_| | | |  __/` + a.Reset + `  ` + a.Dim + `https://github.com/RLBox/skillshare` + a.Reset,
 	}
 
 	// Last line varies based on version

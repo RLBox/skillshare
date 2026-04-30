@@ -47,11 +47,11 @@ release:
 
 brews:
   - repository:
-      owner: runkids
+      owner: RLBox
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
     directory: Formula
-    homepage: https://github.com/runkids/skillshare
+    homepage: https://github.com/RLBox/skillshare
     description: Share skills across AI CLI tools
     license: MIT
     install: |
