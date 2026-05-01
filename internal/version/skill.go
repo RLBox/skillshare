@@ -10,7 +10,7 @@ import (
 )
 
 // SkillSourceURL is the raw URL to the official skillshare skill's SKILL.md.
-const SkillSourceURL = "https://raw.githubusercontent.com/runkids/skillshare/main/skills/skillshare/SKILL.md"
+const SkillSourceURL = "https://raw.githubusercontent.com/RLBox/skillshare/main/skills/skillshare/SKILL.md"
 
 // ReadLocalSkillVersion reads metadata.version from source/skillshare/SKILL.md.
 // The returned value never has a "v" prefix.

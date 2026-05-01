@@ -24,7 +24,7 @@ targets: {}
 
 	t.Setenv("GITHUB_TOKEN", "ghp_this_is_a_fake_token_for_testing")
 
-	result := sb.RunCLI("install", "runkids/skillshare/skills/skillshare", "--dry-run")
+	result := sb.RunCLI("install", "RLBox/skillshare/skills/skillshare", "--dry-run")
 
 	result.AssertSuccess(t)
 	result.AssertAnyOutputContains(t, "dry-run")
@@ -49,7 +49,7 @@ targets: {}
 	t.Setenv("GIT_TERMINAL_PROMPT", "0")
 
 	// Use a known-private or non-existent repo to trigger auth error
-	result := sb.RunCLI("install", "https://github.com/runkids/skillshare-private-test-do-not-create.git")
+	result := sb.RunCLI("install", "https://github.com/RLBox/skillshare-private-test-do-not-create.git")
 
 	result.AssertFailure(t)
 	// Should show helpful auth options, not raw git error
@@ -73,9 +73,9 @@ targets: {}
 `)
 
 	// This test requires a private repo accessible with the provided token.
-	// The repo runkids/skillshare-private-test must exist and contain a
+	// The repo RLBox/skillshare-private-test must exist and contain a
 	// SKILL.md. Skip if the repo doesn't exist or token lacks access.
-	result := sb.RunCLI("install", "https://github.com/runkids/skillshare-private-test.git", "--dry-run")
+	result := sb.RunCLI("install", "https://github.com/RLBox/skillshare-private-test.git", "--dry-run")
 
 	if result.ExitCode != 0 {
 		t.Skip("private test repo not accessible, skipping")
@@ -107,7 +107,7 @@ targets: {}
 	// Install a public repo as tracked (creates .git, enabling git pull)
 	// This repository intentionally contains malicious-pattern fixtures in tests/docs.
 	// Use --force so this auth test focuses on token-safe update behavior.
-	installResult := sb.RunCLI("install", "runkids/skillshare", "--track", "--name", "auth-tracked-test", "--force")
+	installResult := sb.RunCLI("install", "RLBox/skillshare", "--track", "--name", "auth-tracked-test", "--force")
 	installResult.AssertSuccess(t)
 
 	trackedDir := filepath.Join(sb.SourcePath, "_auth-tracked-test")

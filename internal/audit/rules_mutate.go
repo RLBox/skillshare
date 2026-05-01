@@ -9,7 +9,7 @@ import (
 )
 
 // rulesFileHeader is prepended when writing audit-rules.yaml.
-const rulesFileHeader = "# Custom audit rules for skillshare.\n# See: https://skillshare.runkids.cc/docs/reference/commands/audit#custom-rules\n"
+const rulesFileHeader = "# Custom audit rules for skillshare.\n# See: https://skillshare.rlbox.cc/docs/reference/commands/audit#custom-rules\n"
 
 // ToggleRule enables or disables a single rule by ID in the given audit-rules.yaml.
 // If enabled=false, adds an `enabled: false` entry.

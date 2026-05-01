@@ -177,7 +177,7 @@ func TestSearch_HubBare_FallbackToCommunity(t *testing.T) {
 	}
 }
 
-// Regression test for https://github.com/runkids/skillshare/issues/129
+// Regression test for https://github.com/RLBox/skillshare/issues/129
 //
 // Build a non-dev binary with a low version and seed the version cache with a
 // "newer" release.  Without the fix, the update notice leaks into structured

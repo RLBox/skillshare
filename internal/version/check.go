@@ -15,7 +15,7 @@ import (
 var Version = "dev"
 
 const (
-	githubRepo    = "runkids/skillshare"
+	githubRepo    = "RLBox/skillshare"
 	checkInterval = 24 * time.Hour
 	cacheFileName = "version-check.json"
 )

@@ -20,7 +20,7 @@ func TestInstall_RemoteGitHubSubdir_DryRun(t *testing.T) {
 targets: {}
 `)
 
-	result := sb.RunCLI("install", "runkids/skillshare/skills/skillshare", "--dry-run")
+	result := sb.RunCLI("install", "RLBox/skillshare/skills/skillshare", "--dry-run")
 
 	result.AssertSuccess(t)
 	result.AssertAnyOutputContains(t, "dry-run")
@@ -35,7 +35,7 @@ func TestInstall_RemoteGitHub_Clone(t *testing.T) {
 targets: {}
 `)
 
-	result := sb.RunCLI("install", "runkids/skillshare/skills/skillshare")
+	result := sb.RunCLI("install", "RLBox/skillshare/skills/skillshare")
 
 	result.AssertSuccess(t)
 
@@ -61,7 +61,7 @@ targets: {}
 
 	// This repository intentionally contains malicious-pattern fixtures in tests/docs.
 	// Use --force so this test validates track mechanics, not audit blocking policy.
-	result := sb.RunCLI("install", "runkids/skillshare", "--track", "--name", "test-tracked", "--force")
+	result := sb.RunCLI("install", "RLBox/skillshare", "--track", "--name", "test-tracked", "--force")
 
 	result.AssertSuccess(t)
 

@@ -11,7 +11,7 @@ import (
 )
 
 // ProjectSchemaURL is the JSON Schema URL for the project config file.
-const ProjectSchemaURL = "https://raw.githubusercontent.com/runkids/skillshare/main/schemas/project-config.schema.json"
+const ProjectSchemaURL = "https://raw.githubusercontent.com/RLBox/skillshare/main/schemas/project-config.schema.json"
 
 // projectSchemaComment is the YAML Language Server directive prepended to saved project config files.
 var projectSchemaComment = []byte("# yaml-language-server: $schema=" + ProjectSchemaURL + "\n")

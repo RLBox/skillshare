@@ -31,7 +31,7 @@ func SourceRoot(source string) string {
 }
 
 // RegistrySchemaURL is the JSON Schema URL for registry.yaml.
-const RegistrySchemaURL = "https://raw.githubusercontent.com/runkids/skillshare/main/schemas/registry.schema.json"
+const RegistrySchemaURL = "https://raw.githubusercontent.com/RLBox/skillshare/main/schemas/registry.schema.json"
 
 var registrySchemaComment = []byte("# yaml-language-server: $schema=" + RegistrySchemaURL + "\n")
 

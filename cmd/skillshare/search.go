@@ -38,7 +38,7 @@ func cmdSearch(args []string) error {
 
 	applyModeLabel(mode)
 
-	const defaultHubURL = "https://raw.githubusercontent.com/runkids/skillshare-hub/main/skillshare-hub.json"
+	const defaultHubURL = "https://raw.githubusercontent.com/RLBox/skillshare-hub/main/skillshare-hub.json"
 
 	var query string
 	var jsonOutput bool

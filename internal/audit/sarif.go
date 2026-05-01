@@ -4,7 +4,7 @@ const (
 	sarifVersion = "2.1.0"
 	sarifSchema  = "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json"
 	toolName     = "skillshare"
-	toolInfoURI  = "https://skillshare.runkids.cc/"
+	toolInfoURI  = "https://skillshare.rlbox.cc/"
 )
 
 // --- SARIF 2.1.0 structs (unexported except SARIFOptions) ---

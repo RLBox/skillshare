@@ -263,8 +263,8 @@ func TestIsRelativeSource(t *testing.T) {
 }
 
 func TestNormalizeHubURL_GitLabBlob(t *testing.T) {
-	in := "https://gitlab.com/runkids/demo_empty/-/blob/b3cc455172bee71af57aff7c5a37fd33d000d3a8/skillshare-hub.json"
-	want := "https://gitlab.com/api/v4/projects/runkids%2Fdemo_empty/repository/files/skillshare-hub.json/raw?ref=b3cc455172bee71af57aff7c5a37fd33d000d3a8"
+	in := "https://gitlab.com/rlbox-test/demo_empty/-/blob/b3cc455172bee71af57aff7c5a37fd33d000d3a8/skillshare-hub.json"
+	want := "https://gitlab.com/api/v4/projects/rlbox-test%2Fdemo_empty/repository/files/skillshare-hub.json/raw?ref=b3cc455172bee71af57aff7c5a37fd33d000d3a8"
 
 	got := normalizeHubURL(in)
 	if got != want {
@@ -273,8 +273,8 @@ func TestNormalizeHubURL_GitLabBlob(t *testing.T) {
 }
 
 func TestNormalizeHubURL_GitLabRaw(t *testing.T) {
-	in := "https://gitlab.com/runkids/demo_empty/-/raw/main/skillshare-hub.json"
-	want := "https://gitlab.com/api/v4/projects/runkids%2Fdemo_empty/repository/files/skillshare-hub.json/raw?ref=main"
+	in := "https://gitlab.com/rlbox-test/demo_empty/-/raw/main/skillshare-hub.json"
+	want := "https://gitlab.com/api/v4/projects/rlbox-test%2Fdemo_empty/repository/files/skillshare-hub.json/raw?ref=main"
 
 	got := normalizeHubURL(in)
 	if got != want {
@@ -315,7 +315,7 @@ func TestBuildHubRequest_GitLabHeaders(t *testing.T) {
 	t.Setenv("GITLAB_TOKEN", "glpat_test")
 	t.Setenv("SKILLSHARE_GIT_TOKEN", "")
 
-	req, err := buildHubRequest("https://gitlab.com/runkids/demo_empty/-/blob/main/skillshare-hub.json")
+	req, err := buildHubRequest("https://gitlab.com/rlbox-test/demo_empty/-/blob/main/skillshare-hub.json")
 	if err != nil {
 		t.Fatalf("buildHubRequest() error = %v", err)
 	}

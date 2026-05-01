@@ -424,11 +424,11 @@ func TestRepoLabelFromSource(t *testing.T) {
 	}{
 		{"nil", nil, ""},
 		{"github https", &install.Source{
-			Type: install.SourceTypeGitHub, CloneURL: "https://github.com/runkids/feature-radar.git",
-		}, "runkids/feature-radar"},
+			Type: install.SourceTypeGitHub, CloneURL: "https://github.com/RLBox/feature-radar.git",
+		}, "RLBox/feature-radar"},
 		{"github ssh", &install.Source{
-			Type: install.SourceTypeGitSSH, CloneURL: "git@github.com:runkids/feature-radar.git",
-		}, "runkids/feature-radar"},
+			Type: install.SourceTypeGitSSH, CloneURL: "git@github.com:RLBox/feature-radar.git",
+		}, "RLBox/feature-radar"},
 		{"generic https", &install.Source{
 			Type: install.SourceTypeGitHTTPS, CloneURL: "https://gitlab.com/team/skills.git",
 		}, "team/skills"},
@@ -500,11 +500,11 @@ func TestDisplayInstallResults_SkippedShowsRepoLabel(t *testing.T) {
 	}
 
 	output := captureStdout(t, func() {
-		displayInstallResults(results, nil, false, "runkids/feature-radar")
+		displayInstallResults(results, nil, false, "RLBox/feature-radar")
 	})
 	output = stripANSIWarnings(output)
 
-	if !strings.Contains(output, "Skipped (runkids/feature-radar)") {
+	if !strings.Contains(output, "Skipped (RLBox/feature-radar)") {
 		t.Errorf("expected repo label in Skipped header, got:\n%s", output)
 	}
 	if !strings.Contains(output, "skip-a, skip-b") {

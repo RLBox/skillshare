@@ -28,7 +28,7 @@ targets: {}
 
 	installResult := sb.RunCLI(
 		"install",
-		"https://github.com/runkids/skillshare-private-test.git",
+		"https://github.com/RLBox/skillshare-private-test.git",
 		"--track",
 		"--name",
 		"update-auth-private",

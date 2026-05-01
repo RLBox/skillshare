@@ -117,7 +117,7 @@ func ensureUIAvailable() (string, error) {
 		sp.Fail("Download failed")
 		fmt.Println()
 		ui.Warning("Install with the full installer to get the web UI:")
-		fmt.Println("  curl -fsSL https://raw.githubusercontent.com/runkids/skillshare/main/install.sh | sh")
+		fmt.Println("  curl -fsSL https://raw.githubusercontent.com/RLBox/skillshare/main/install.sh | sh")
 		return "", fmt.Errorf("could not download UI assets: %w", err)
 	}
 	sp.Success("UI assets downloaded and cached")

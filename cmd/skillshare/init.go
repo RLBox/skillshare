@@ -23,7 +23,7 @@ import (
 	"golang.org/x/term"
 )
 
-const skillshareSkillSource = "github.com/runkids/skillshare/skills/skillshare"
+const skillshareSkillSource = "github.com/RLBox/skillshare/skills/skillshare"
 const remoteFetchTimeout = 15 * time.Second
 
 // initOptions holds all parsed arguments for the init command

@@ -148,7 +148,7 @@ func TestWriteRulesFile_Header(t *testing.T) {
 	if !strings.HasPrefix(content, "# Custom audit rules for skillshare.") {
 		t.Fatal("expected header at start of file")
 	}
-	if !strings.Contains(content, "https://skillshare.runkids.cc/docs/reference/commands/audit#custom-rules") {
+	if !strings.Contains(content, "https://skillshare.rlbox.cc/docs/reference/commands/audit#custom-rules") {
 		t.Fatal("expected docs URL in header")
 	}
 }

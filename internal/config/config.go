@@ -291,7 +291,7 @@ const defaultAuditBlockThreshold = "CRITICAL"
 const DefaultLogMaxEntries = 1000
 
 // GlobalSchemaURL is the JSON Schema URL for the global config file.
-const GlobalSchemaURL = "https://raw.githubusercontent.com/runkids/skillshare/main/schemas/config.schema.json"
+const GlobalSchemaURL = "https://raw.githubusercontent.com/RLBox/skillshare/main/schemas/config.schema.json"
 
 // schemaComment is the YAML Language Server directive prepended to saved config files.
 var schemaComment = []byte("# yaml-language-server: $schema=" + GlobalSchemaURL + "\n")

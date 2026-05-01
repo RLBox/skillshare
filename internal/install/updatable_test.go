@@ -210,15 +210,15 @@ func TestFindRepoInstalls_MatchesNested(t *testing.T) {
 		os.MkdirAll(dir, 0755)
 		os.WriteFile(filepath.Join(dir, "SKILL.md"), []byte("# "+name), 0644)
 		store.Set(name, &MetadataEntry{
-			Source:  "https://github.com/runkids/feature-radar",
+			Source:  "https://github.com/RLBox/feature-radar",
 			Type:    "github",
-			RepoURL: "https://github.com/runkids/feature-radar.git",
+			RepoURL: "https://github.com/RLBox/feature-radar.git",
 			Group:   "feature-radar",
 		})
 	}
 	store.Save(src)
 
-	matches := FindRepoInstalls(src, "git@github.com:runkids/feature-radar.git")
+	matches := FindRepoInstalls(src, "git@github.com:RLBox/feature-radar.git")
 	if len(matches) != 3 {
 		t.Fatalf("expected 3 matches (SSH vs HTTPS normalised), got %d: %v", len(matches), matches)
 	}
