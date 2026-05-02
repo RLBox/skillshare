@@ -28,7 +28,7 @@ echo "  ────────────────────────
 echo ""
 
 # ── Step 1: Check/install skillshare ──────────────────────
-step "1/4  检查 skillshare..."
+step "1/5  检查 skillshare..."
 
 if command -v skillshare >/dev/null 2>&1; then
     SK_VER=$(skillshare version 2>/dev/null | head -1 || echo "unknown")
@@ -41,8 +41,25 @@ else
     info "skillshare 安装完成"
 fi
 
-# ── Step 2: Check openclacky ──────────────────────────────
-step "2/4  检查 openclacky..."
+# ── Step 2: Initialize skillshare (non-interactive) ───────
+step "2/5  初始化 skillshare..."
+
+# Check if already initialized
+if skillshare target list >/dev/null 2>&1; then
+    info "skillshare 已初始化"
+else
+    info "正在初始化 skillshare (非交互模式)..."
+    if skillshare init --no-copy --no-git --no-skill --targets openclacky --mode merge; then
+        info "skillshare 初始化完成"
+    else
+        warn "skillshare 初始化失败，尝试继续..."
+        # Some environments may need manual init
+        warn "如果后续步骤失败，请手动执行: skillshare init --no-copy --no-git --no-skill --targets openclacky --mode merge"
+    fi
+fi
+
+# ── Step 3: Check openclacky ──────────────────────────────
+step "3/5  检查 openclacky..."
 
 if [ -d "${OPENCLACKY_SKILLS_DIR}" ]; then
     info "openclacky skills 目录就绪: ${OPENCLACKY_SKILLS_DIR}"
@@ -53,8 +70,8 @@ else
     error "初始化中止 — openclacky 未就绪"
 fi
 
-# ── Step 3: Install box skills ────────────────────────────
-step "3/4  安装 Box 技能..."
+# ── Step 4: Install box skills ────────────────────────────
+step "4/5  安装 Box 技能..."
 
 echo "  正在从 ${BOX_SKILLS_SOURCE} 安装 ${BOX_FILTER}..."
 if skillshare install "${BOX_SKILLS_SOURCE}" -s "${BOX_FILTER}" --skip-audit 2>&1; then
@@ -63,8 +80,8 @@ else
     error "技能安装失败，请检查网络后重试"
 fi
 
-# ── Step 4: Configure target + sync ───────────────────────
-step "4/4  配置 openclacky 目标并同步..."
+# ── Step 5: Configure target + sync ───────────────────────
+step "5/5  配置 openclacky 目标并同步..."
 
 # Check if openclacky target already exists
 if skillshare target list 2>/dev/null | grep -qi "openclacky"; then
