@@ -65,7 +65,7 @@ get_latest_version() {
 
 # Download and install
 install() {
-  URL="https://github.com/${REPO}/releases/download/${LATEST}/${BINARY_NAME}_${LATEST}_${OS}_${ARCH}.tar.gz"
+  URL="https://github.com/${REPO}/releases/download/${LATEST}/${BINARY_NAME}_${VERSION}_${OS}_${ARCH}.tar.gz"
 
   info "Downloading skillshare ${VERSION} for ${OS}/${ARCH}..."
 
