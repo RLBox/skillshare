@@ -91,7 +91,7 @@ function Install-Skillshare {
     $versionNum = $version.TrimStart("v")
     $installDir = Get-InstallDir
 
-    $url = "https://github.com/$Repo/releases/download/$version/${BinaryName}_${version}_windows_${arch}.zip"
+    $url = "https://github.com/$Repo/releases/download/$version/${BinaryName}_${versionNum}_windows_${arch}.zip"
 
     Write-Info "Downloading skillshare $version for windows/$arch..."
 
